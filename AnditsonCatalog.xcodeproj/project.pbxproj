@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370960DA189787D200D1A51A /* movieList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 370960D9189787D200D1A51A /* movieList.txt */; };
 		375455DD18948642008D029D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375455DC18948642008D029D /* Foundation.framework */; };
 		375455DF18948642008D029D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375455DE18948642008D029D /* CoreGraphics.framework */; };
 		375455E118948642008D029D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375455E018948642008D029D /* UIKit.framework */; };
@@ -21,6 +22,18 @@
 		375455FE18948642008D029D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375455E018948642008D029D /* UIKit.framework */; };
 		3754560618948642008D029D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3754560418948642008D029D /* InfoPlist.strings */; };
 		3754560818948642008D029D /* AnditsonCatalogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3754560718948642008D029D /* AnditsonCatalogTests.m */; };
+		3754561318948816008D029D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3754561218948816008D029D /* DetailViewController.m */; };
+		375456161894888D008D029D /* MovieTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 375456151894888D008D029D /* MovieTVC.m */; };
+		37A1818418961C4B00F32994 /* AnditsonCDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37A1818218961C4B00F32994 /* AnditsonCDModel.xcdatamodeld */; };
+		37A1819A18962EE900F32994 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A1819918962EE900F32994 /* CoreDataTableViewController.m */; };
+		37A181B018963CEB00F32994 /* Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181AF18963CEB00F32994 /* Director.m */; };
+		37A181B318963CEB00F32994 /* Actor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181B218963CEB00F32994 /* Actor.m */; };
+		37A181B618963CEB00F32994 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181B518963CEB00F32994 /* Movie.m */; };
+		37A181BC18963FC000F32994 /* Movie+Anditson.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181BB18963FC000F32994 /* Movie+Anditson.m */; };
+		37A181BF189644D300F32994 /* Director+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181BE189644D300F32994 /* Director+Create.m */; };
+		37A181C418964C1700F32994 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A181C318964C1700F32994 /* CoreData.framework */; };
+		37A181C718964F8100F32994 /* AnditsonFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A181C618964F8100F32994 /* AnditsonFetcher.m */; };
+		37D03BBE1897785E008B34DF /* MovieFileReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D03BBD1897785E008B34DF /* MovieFileReceiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		370960D9189787D200D1A51A /* movieList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieList.txt; sourceTree = "<group>"; };
 		375455D918948642008D029D /* AnditsonCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnditsonCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375455DC18948642008D029D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		375455DE18948642008D029D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +67,28 @@
 		3754560318948642008D029D /* AnditsonCatalogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnditsonCatalogTests-Info.plist"; sourceTree = "<group>"; };
 		3754560518948642008D029D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3754560718948642008D029D /* AnditsonCatalogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnditsonCatalogTests.m; sourceTree = "<group>"; };
+		3754561118948816008D029D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3754561218948816008D029D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		375456141894888D008D029D /* MovieTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTVC.h; sourceTree = "<group>"; };
+		375456151894888D008D029D /* MovieTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTVC.m; sourceTree = "<group>"; };
+		37A1818318961C4B00F32994 /* AnditsonCDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnditsonCDModel.xcdatamodel; sourceTree = "<group>"; };
+		37A1819818962EE900F32994 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		37A1819918962EE900F32994 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		37A181AE18963CEB00F32994 /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		37A181AF18963CEB00F32994 /* Director.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Director.m; sourceTree = "<group>"; };
+		37A181B118963CEB00F32994 /* Actor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Actor.h; sourceTree = "<group>"; };
+		37A181B218963CEB00F32994 /* Actor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Actor.m; sourceTree = "<group>"; };
+		37A181B418963CEB00F32994 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		37A181B518963CEB00F32994 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		37A181BA18963FC000F32994 /* Movie+Anditson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Movie+Anditson.h"; sourceTree = "<group>"; };
+		37A181BB18963FC000F32994 /* Movie+Anditson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Movie+Anditson.m"; sourceTree = "<group>"; };
+		37A181BD189644D300F32994 /* Director+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Director+Create.h"; sourceTree = "<group>"; };
+		37A181BE189644D300F32994 /* Director+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Director+Create.m"; sourceTree = "<group>"; };
+		37A181C318964C1700F32994 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		37A181C518964F8100F32994 /* AnditsonFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnditsonFetcher.h; sourceTree = "<group>"; };
+		37A181C618964F8100F32994 /* AnditsonFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnditsonFetcher.m; sourceTree = "<group>"; };
+		37D03BBC1897785E008B34DF /* MovieFileReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieFileReceiver.h; sourceTree = "<group>"; };
+		37D03BBD1897785E008B34DF /* MovieFileReceiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieFileReceiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A181C418964C1700F32994 /* CoreData.framework in Frameworks */,
 				375455DF18948642008D029D /* CoreGraphics.framework in Frameworks */,
 				375455E118948642008D029D /* UIKit.framework in Frameworks */,
 				375455DD18948642008D029D /* Foundation.framework in Frameworks */,
@@ -101,6 +138,7 @@
 		375455DB18948642008D029D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37A181C318964C1700F32994 /* CoreData.framework */,
 				375455DC18948642008D029D /* Foundation.framework */,
 				375455DE18948642008D029D /* CoreGraphics.framework */,
 				375455E018948642008D029D /* UIKit.framework */,
@@ -112,12 +150,15 @@
 		375455E218948642008D029D /* AnditsonCatalog */ = {
 			isa = PBXGroup;
 			children = (
-				375455EB18948642008D029D /* MediaCatalogCDAppDelegate.h */,
-				375455EC18948642008D029D /* MediaCatalogCDAppDelegate.m */,
-				375455EE18948642008D029D /* Main.storyboard */,
-				375455F118948642008D029D /* MediaCatalogCDViewController.h */,
-				375455F218948642008D029D /* MediaCatalogCDViewController.m */,
 				375455F418948642008D029D /* Images.xcassets */,
+				37A1818218961C4B00F32994 /* AnditsonCDModel.xcdatamodeld */,
+				375455EE18948642008D029D /* Main.storyboard */,
+				370960D9189787D200D1A51A /* movieList.txt */,
+				375455EC18948642008D029D /* MediaCatalogCDAppDelegate.m */,
+				375455EB18948642008D029D /* MediaCatalogCDAppDelegate.h */,
+				37D03BBF189779B5008B34DF /* Model */,
+				37A181971896222E00F32994 /* Core Data */,
+				37A1819B18962F3000F32994 /* View */,
 				375455E318948642008D029D /* Supporting Files */,
 			);
 			path = AnditsonCatalog;
@@ -126,6 +167,8 @@
 		375455E318948642008D029D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				375455F118948642008D029D /* MediaCatalogCDViewController.h */,
+				375455F218948642008D029D /* MediaCatalogCDViewController.m */,
 				375455E418948642008D029D /* AnditsonCatalog-Info.plist */,
 				375455E518948642008D029D /* InfoPlist.strings */,
 				375455E818948642008D029D /* main.m */,
@@ -150,6 +193,47 @@
 				3754560418948642008D029D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37A181971896222E00F32994 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				37A181B418963CEB00F32994 /* Movie.h */,
+				37A181B518963CEB00F32994 /* Movie.m */,
+				37A181B118963CEB00F32994 /* Actor.h */,
+				37A181B218963CEB00F32994 /* Actor.m */,
+				37A181AE18963CEB00F32994 /* Director.h */,
+				37A181AF18963CEB00F32994 /* Director.m */,
+				37A181BA18963FC000F32994 /* Movie+Anditson.h */,
+				37A181BB18963FC000F32994 /* Movie+Anditson.m */,
+				37A181BD189644D300F32994 /* Director+Create.h */,
+				37A181BE189644D300F32994 /* Director+Create.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		37A1819B18962F3000F32994 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37A1819818962EE900F32994 /* CoreDataTableViewController.h */,
+				37A1819918962EE900F32994 /* CoreDataTableViewController.m */,
+				375456141894888D008D029D /* MovieTVC.h */,
+				375456151894888D008D029D /* MovieTVC.m */,
+				3754561118948816008D029D /* DetailViewController.h */,
+				3754561218948816008D029D /* DetailViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		37D03BBF189779B5008B34DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37A181C618964F8100F32994 /* AnditsonFetcher.m */,
+				37A181C518964F8100F32994 /* AnditsonFetcher.h */,
+				37D03BBC1897785E008B34DF /* MovieFileReceiver.h */,
+				37D03BBD1897785E008B34DF /* MovieFileReceiver.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +316,7 @@
 				375455F518948642008D029D /* Images.xcassets in Resources */,
 				375455E718948642008D029D /* InfoPlist.strings in Resources */,
 				375455F018948642008D029D /* Main.storyboard in Resources */,
+				370960DA189787D200D1A51A /* movieList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +335,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A181BF189644D300F32994 /* Director+Create.m in Sources */,
+				37A181C718964F8100F32994 /* AnditsonFetcher.m in Sources */,
+				37A1818418961C4B00F32994 /* AnditsonCDModel.xcdatamodeld in Sources */,
+				37A181B018963CEB00F32994 /* Director.m in Sources */,
+				37A181B618963CEB00F32994 /* Movie.m in Sources */,
+				375456161894888D008D029D /* MovieTVC.m in Sources */,
+				37A181B318963CEB00F32994 /* Actor.m in Sources */,
 				375455ED18948642008D029D /* MediaCatalogCDAppDelegate.m in Sources */,
+				37A181BC18963FC000F32994 /* Movie+Anditson.m in Sources */,
+				37A1819A18962EE900F32994 /* CoreDataTableViewController.m in Sources */,
 				375455E918948642008D029D /* main.m in Sources */,
 				375455F318948642008D029D /* MediaCatalogCDViewController.m in Sources */,
+				3754561318948816008D029D /* DetailViewController.m in Sources */,
+				37D03BBE1897785E008B34DF /* MovieFileReceiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +557,7 @@
 				3754560D18948642008D029D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3754560E18948642008D029D /* Build configuration list for PBXNativeTarget "AnditsonCatalogTests" */ = {
 			isa = XCConfigurationList;
@@ -469,8 +566,22 @@
 				3754561018948642008D029D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37A1818218961C4B00F32994 /* AnditsonCDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37A1818318961C4B00F32994 /* AnditsonCDModel.xcdatamodel */,
+			);
+			currentVersion = 37A1818318961C4B00F32994 /* AnditsonCDModel.xcdatamodel */;
+			path = AnditsonCDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 375455D118948642008D029D /* Project object */;
 }
