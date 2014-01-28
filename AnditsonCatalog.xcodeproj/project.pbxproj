@@ -60,6 +60,7 @@
 		90B80EEB189843AA003D26D0 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B80ECD189843AA003D26D0 /* MagicalRecord+Setup.m */; };
 		90B80EEC189843AA003D26D0 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B80ECF189843AA003D26D0 /* MagicalRecord+ShorthandSupport.m */; };
 		90B80EED189843AA003D26D0 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B80ED1189843AA003D26D0 /* MagicalRecord.m */; };
+		90B80EFC1898449E003D26D0 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B80EFB1898449E003D26D0 /* DejalActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +170,8 @@
 		90B80ED1189843AA003D26D0 /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
 		90B80ED2189843AA003D26D0 /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		90B80ED3189843AA003D26D0 /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		90B80EFA1898449E003D26D0 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
+		90B80EFB1898449E003D26D0 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +221,7 @@
 		375455DB18948642008D029D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90B80EF91898449E003D26D0 /* DejalActivityView */,
 				90B80E98189843AA003D26D0 /* MagicalRecord */,
 				37A181C318964C1700F32994 /* CoreData.framework */,
 				375455DC18948642008D029D /* Foundation.framework */,
@@ -418,6 +422,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		90B80EF91898449E003D26D0 /* DejalActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				90B80EFA1898449E003D26D0 /* DejalActivityView.h */,
+				90B80EFB1898449E003D26D0 /* DejalActivityView.m */,
+			);
+			path = DejalActivityView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -556,6 +569,7 @@
 				90B80EDF189843AA003D26D0 /* NSManagedObject+MagicalRequests.m in Sources */,
 				90B80EDB189843AA003D26D0 /* NSManagedObject+MagicalAggregation.m in Sources */,
 				90B80ED6189843AA003D26D0 /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				90B80EFC1898449E003D26D0 /* DejalActivityView.m in Sources */,
 				37D03BBE1897785E008B34DF /* MovieFileReceiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
