@@ -14,7 +14,7 @@
 +(Movie *) movieWithAnditsonInfo: (NSDictionary*) anditsonInfo inManagedObjectContext: (NSManagedObjectContext*) context{
     
     Movie *movie = nil;
-    movie = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:context];
+//    movie = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:context];
     
     //makes fetch request to be able to populate entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Movie"];

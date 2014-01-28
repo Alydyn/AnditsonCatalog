@@ -13,7 +13,7 @@
 +(Director *) directorWithName: (NSString*) name inManagedObjectContext: (NSManagedObjectContext*) context{
     
     Director *director = nil;
-    director = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:context];
+//    director = [NSEntityDescription insertNewObjectForEntityForName:@"Movie" inManagedObjectContext:context];
     
     //makes fetch request to be able to populate entity
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Director"];

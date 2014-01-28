@@ -11,6 +11,4 @@
 
 @interface MovieTVC : CoreDataTableViewController
 
-@property (nonatomic,strong) UIManagedDocument *movieDatabase;
-
 @end

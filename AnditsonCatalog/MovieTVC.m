@@ -15,7 +15,7 @@
 @end
 
 @implementation MovieTVC
-@synthesize movieDatabase = _movieDatabase;
+//@synthesize movieDatabase = _movieDatabase;
 
 #pragma mark - setting up database
 
@@ -25,41 +25,65 @@
     
     //if movieDatabase hasn't been made yet, get the local save location and save to the location and name it "Movie Default Database"
     //the movieDatabase becomes a managedDocument!:)
-    if(!self.movieDatabase){
-        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentationDirectory inDomains:NSUserDomainMask] lastObject];
-        url = [url URLByAppendingPathComponent:@"Movie Default Database"];
-        self.movieDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
-    }
+    //    if(!self.movieDatabase){
+    //        NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentationDirectory inDomains:NSUserDomainMask] lastObject];
+    //        url = [url URLByAppendingPathComponent:@"Movie Default Database"];
+    //        self.movieDatabase = [[UIManagedDocument alloc] initWithFileURL:url];
     
+    //        NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption : @YES,
+    //                                  NSInferMappingModelAutomaticallyOption : @YES};
+    //        self.movieDatabase.persistentStoreOptions = options;
+    //
+    //        if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
+    //            [self.movieDatabase openWithCompletionHandler:^(BOOL success){
+    //                if (!success) {
+    //                    // Handle the error.
+    //                    NSLog(@"Error opening.");
+    //                }
+    //            }];
+    //        }
+    //        else {
+    //
+    //            [self.movieDatabase saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+    //                if (!success) {
+    //                    // Handle the error.
+    //                    NSLog(@"Error saving.");
+    //                }
+    //            }];
+    //        }
+    
+    //    }
+    [self setUpFetchedResultsController];
+    [self fetchAnditsonDataIntoDocument:nil];
 }
 
--(void)setMovieDatabase:(UIManagedDocument *)movieDatabase{
-    
-    _movieDatabase = movieDatabase;
-    [self useDocument];
-    
-}
+//-(void)setMovieDatabase:(UIManagedDocument *)movieDatabase{
+//
+////    _movieDatabase = movieDatabase;
+//    [self useDocument];
+//
+//}
 
 //this is the hook to the database
--(void) useDocument{
-    
-    //if document doesn't exist, create it,fetch, and save it
-    //if document exists but is not open, open it
-    //if it is open and exists...setup FetchedResultsController
-    if(![[NSFileManager defaultManager] fileExistsAtPath:[self.movieDatabase.fileURL path]]){
-        [self.movieDatabase saveToURL:self.movieDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
-            [self setUpFetchedResultsController];
-            [self fetchAnditsonDataIntoDocument: self.movieDatabase];
-        }];
-    }else if (self.movieDatabase.documentState == UIDocumentStateClosed){
-        [self.movieDatabase openWithCompletionHandler:^(BOOL success){
-            [self setUpFetchedResultsController];
-        }];
-    }else if (self.movieDatabase.documentState == UIDocumentStateNormal){
-        [self setUpFetchedResultsController];
-    }
-    
-}
+//-(void) useDocument{
+//
+//    //if document doesn't exist, create it,fetch, and save it
+//    //if document exists but is not open, open it
+//    //if it is open and exists...setup FetchedResultsController
+//    if(![[NSFileManager defaultManager] fileExistsAtPath:[self.movieDatabase.fileURL path]]){
+//        [self.movieDatabase saveToURL:self.movieDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+//            [self setUpFetchedResultsController];
+//            [self fetchAnditsonDataIntoDocument: self.movieDatabase];
+//        }];
+//    }else if (self.movieDatabase.documentState == UIDocumentStateClosed){
+//        [self.movieDatabase openWithCompletionHandler:^(BOOL success){
+//            [self setUpFetchedResultsController];
+//        }];
+//    }else if (self.movieDatabase.documentState == UIDocumentStateNormal){
+//        [self setUpFetchedResultsController];
+//    }
+//
+//}
 
 -(void) setUpFetchedResultsController{
     
@@ -68,33 +92,28 @@
     request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
     
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
-                                                                        managedObjectContext:self.movieDatabase.managedObjectContext
+                                                                        managedObjectContext:[NSManagedObjectContext MR_contextForCurrentThread]
                                                                           sectionNameKeyPath:nil cacheName:nil];
     
 }
 
 //accesses persistent store
--(void) fetchAnditsonDataIntoDocument: (UIManagedDocument*) document{
+-(void) fetchAnditsonDataIntoDocument: (UIManagedDocument*) document
+{
     
-    //creates new thread so that the main thread is not blocked by fetching :)
-    dispatch_queue_t fetchQ = dispatch_queue_create("fetchQ", NULL);
-    dispatch_async(fetchQ, ^{
-        
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         NSArray *movies = [AnditsonFetcher fetchFromAnditson]; //creates array of movie information from Anditson.com
-        NSLog(@"Returned");
-        //to add movies to context, we must be on the main thread
-        [document.managedObjectContext performBlock:^{
-            NSLog(@"BLOCK DAWK");
-            for(NSDictionary *movieInfo in movies){
-                NSLog(@"Sending into Movie+Anditson Category");
-                [Movie movieWithAnditsonInfo:movieInfo inManagedObjectContext:document.managedObjectContext];
-                NSLog(@"Completed Movie+Anditson Category");
-            }
-        }];
-        NSLog(@"Completed context block");
-    });
-    NSLog(@"Completed fetch anditson");
-    //dispatch_release(fetchQ);
+        for(NSDictionary *movieInfo in movies){
+            NSLog(@"Sending into Movie+Anditson Category");
+            [Movie movieWithAnditsonInfo:movieInfo inManagedObjectContext:localContext];
+            NSLog(@"Completed Movie+Anditson Category");
+        }
+        
+    } completion:^(BOOL success, NSError *error) {
+        NSLog(@"Completed fetching from web service.");
+        NSLog(@"%@", success ? @"SUCCESS" : [NSString stringWithFormat:@"ERROR: %@", error]);
+        [self.tableView reloadData];
+    }];
     
 }
 
