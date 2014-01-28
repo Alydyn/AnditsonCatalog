@@ -100,7 +100,7 @@
 //accesses persistent store
 -(void) fetchAnditsonDataIntoDocument: (UIManagedDocument*) document
 {
-    
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Fetching Movie Info..."];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         NSArray *movies = [AnditsonFetcher fetchFromAnditson]; //creates array of movie information from Anditson.com
         for(NSDictionary *movieInfo in movies){
@@ -113,6 +113,7 @@
         NSLog(@"Completed fetching from web service.");
         NSLog(@"%@", success ? @"SUCCESS" : [NSString stringWithFormat:@"ERROR: %@", error]);
         [self.tableView reloadData];
+        [DejalBezelActivityView removeViewAnimated:YES];
     }];
     
 }
